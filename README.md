@@ -1,3 +1,5 @@
+# enhance_expansion_panel
+
 <!-- 
 This README describes the package. If you publish this package to pub.dev,
 this README's contents appear on the landing page for your package.
@@ -11,29 +13,113 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+基于flutter 2.5.0 的原生组件功能升级版;
+Based on flutter 2.5.0 native component feature upgrade;
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+TODO: 
+1. 支持默认箭头隐藏;
+2. 支持自定义箭头;
+3. 支持箭头 leading 和 tailing 位置布局；
+
+TODO in English
+4. support for default arrow hiding;
+5. support for custom arrows;
+6. support for arrow leading and tailing location layout
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
-```dart
-const like = 'sample';
+Example of pubsec.yaml
 ```
+dependencies:
+  flutter:
+    sdk: flutter
 
-## Additional information
+  enhance_expansion_panel:
+    git:
+      url: git@github.com:shang1219178163/enhance_expansion_panel.git
+      ref: main
+```
+## Usage
+TODO: 
+```
+EnhanceExpansionPanelList(
+    //...
+    return EnhanceExpansionPanel(
+      //code ...
+      
+      /// custom property
+      /// color
+      arrowColor: Colors.blue,
+      /// leading, tailing, none
+      arrowPosition: EnhanceExpansionPanelArrowPosition.tailing,
+      /// padding
+      arrowPadding: const EdgeInsets.all(5),
+      /// custome wiget
+      arrow: const Icon(Icons.keyboard_arrow_right, color: Colors.blue,),
+      /// custome wiget by isExpanded
+      arrowExpanded: const Icon(Icons.keyboard_arrow_down, color: Colors.red,),
+      /// custom property
+      
+      headerBuilder: (BuildContext context, bool isExpanded) {
+```
+## example
+```
+  ///build EnhanceExpansionPanelList
+  Widget buildExpansionPanelList() {
+    return SingleChildScrollView(
+      child: Container(
+        child: EnhanceExpansionPanelList(
+          dividerColor: Colors.red,
+          // elevation: 4,
+          expandedHeaderPadding: EdgeInsets.only(top: 0, bottom: 0),
+          expansionCallback: (int index, bool isExpanded) {
+            setState(() {
+              _data[index].isExpanded = !isExpanded;
+            });
+          },
+          children: _data.map<EnhanceExpansionPanel>((item) {
+            return EnhanceExpansionPanel(
+              isExpanded: item.isExpanded,
+              canTapOnHeader: true,
+              /// custom property
+              /// color
+              arrowColor: Colors.blue,
+              /// leading, tailing, none
+              arrowPosition: EnhanceExpansionPanelArrowPosition.tailing,
+              /// padding
+              arrowPadding: const EdgeInsets.all(5),
+              /// custome wiget
+              arrow: const Icon(Icons.keyboard_arrow_right, color: Colors.blue,),
+              /// custome wiget by isExpanded
+              arrowExpanded: const Icon(Icons.keyboard_arrow_down, color: Colors.red,),
+              /// custom property
+              headerBuilder: (BuildContext context, bool isExpanded) {
+                return Container(
+                  // color: Colors.green,
+                  child: ListTile(
+                    title: Text(item.headerValue),
+                    subtitle: Text("subtitle"),
+                    // trailing: Icon(isExpanded ? Icons.expand_less : Icons.expand_more, color: Colors.red,),
+                    // trailing: Icon(isExpanded ? Icons.keyboard_arrow_down : Icons.keyboard_arrow_right, color: Colors.red,),
+                  ),
+                );
+              },
+              body: _buildExpansionPanelBody(item.index),
+            );
+          }).toList(),
+        ),
+      ),
+    );
+  }
+```
+//## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+## Screenshot
+
+![EnhanceExpansionPanelList](https://github.com/shang1219178163/enhance_expansion_panel/blob/main/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2012%20Pro%20-%202021-10-28%20at%2015.06.49.png?raw=true)
+
+![arrow positon](https://github.com/shang1219178163/enhance_expansion_panel/blob/main/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2012%20Pro%20-%202021-10-28%20at%2015.07.08.png?raw=true)
+
+![custom arrow](https://github.com/shang1219178163/enhance_expansion_panel/blob/main/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2012%20Pro%20-%202021-10-28%20at%2015.18.14.png?raw=true)
