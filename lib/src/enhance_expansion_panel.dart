@@ -46,6 +46,8 @@ enum EnhanceExpansionPanelArrowPosition {
   leading,
   /// A horizontal layout of the Arrow.
   tailing,
+  /// hide Arrow.
+  none
 }
 
 
@@ -60,7 +62,6 @@ class EnhanceExpansionPanel {
     this.isExpanded = false,
     this.canTapOnHeader = false,
     this.backgroundColor,
-    this.arrowHide = false,
     this.arrowColor = Colors.black54,
     this.arrowPadding,
     this.arrowPosition = EnhanceExpansionPanelArrowPosition.tailing,
@@ -93,8 +94,6 @@ class EnhanceExpansionPanel {
   ///
   /// Defaults to [ThemeData.cardColor].
   final Color? backgroundColor;
-
-  final bool arrowHide;
 
   final Color? arrowColor;
 
@@ -485,7 +484,7 @@ class _EnhanceExpansionPanelListState extends State<EnhanceExpansionPanelList> {
         _isChildExpanded(index),
       );
 
-      Widget expandIconContainer = child.arrowHide ? Container() : Container(
+      Widget expandIconContainer = child.arrow == EnhanceExpansionPanelArrowPosition.none ? Container() : Container(
         margin: const EdgeInsetsDirectional.only(end: 8.0),
         child: EnhanceExpandIcon(
           arrow: child.arrow,
@@ -508,7 +507,7 @@ class _EnhanceExpansionPanelListState extends State<EnhanceExpansionPanelList> {
       }
       Widget header = Row(
         children: <Widget>[
-          if (child.arrowHide == false && child.arrowPosition == EnhanceExpansionPanelArrowPosition.leading) expandIconContainer,
+          if (child.arrow != EnhanceExpansionPanelArrowPosition.none && child.arrowPosition == EnhanceExpansionPanelArrowPosition.leading) expandIconContainer,
           Expanded(
             child: AnimatedContainer(
               duration: widget.animationDuration,
@@ -520,7 +519,7 @@ class _EnhanceExpansionPanelListState extends State<EnhanceExpansionPanelList> {
               ),
             ),
           ),
-          if (child.arrowHide == false && child.arrowPosition == EnhanceExpansionPanelArrowPosition.tailing) expandIconContainer,
+          if (child.arrow != EnhanceExpansionPanelArrowPosition.none && child.arrowPosition == EnhanceExpansionPanelArrowPosition.tailing) expandIconContainer,
         ],
       );
       if (child.canTapOnHeader) {

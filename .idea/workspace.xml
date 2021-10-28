@@ -4,6 +4,8 @@
     <list default="true" id="e2a151d7-6d0f-425a-b028-90b9def310a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/enhance_expansion_panel_demo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/enhance_expansion_panel_demo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/enhance_expansion_panel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/enhance_expansion_panel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,22 +66,26 @@
       <screen x="0" y="25" width="1440" height="805" />
     </state>
     <state width="520" height="466" key="DebuggerActiveHint/0.25.1440.805@0.25.1440.805" timestamp="1635387256704" />
-    <state width="1277" height="100" key="GridCell.Tab.0.bottom" timestamp="1635407484967">
+    <state width="1277" height="2" key="GridCell.Tab.0.bottom" timestamp="1635408630965">
       <screen x="0" y="25" width="1440" height="805" />
     </state>
-    <state width="1277" height="100" key="GridCell.Tab.0.bottom/0.25.1440.805@0.25.1440.805" timestamp="1635407484967" />
-    <state width="1277" height="100" key="GridCell.Tab.0.center" timestamp="1635407484966">
+    <state width="1277" height="2" key="GridCell.Tab.0.bottom/0.25.1440.805@0.25.1440.805" timestamp="1635408630965" />
+    <state width="1277" height="2" key="GridCell.Tab.0.center" timestamp="1635408630964">
       <screen x="0" y="25" width="1440" height="805" />
     </state>
-    <state width="1277" height="100" key="GridCell.Tab.0.center/0.25.1440.805@0.25.1440.805" timestamp="1635407484966" />
-    <state width="1277" height="100" key="GridCell.Tab.0.left" timestamp="1635407484966">
+    <state width="1277" height="2" key="GridCell.Tab.0.center/0.25.1440.805@0.25.1440.805" timestamp="1635408630964" />
+    <state width="1277" height="2" key="GridCell.Tab.0.left" timestamp="1635408630963">
       <screen x="0" y="25" width="1440" height="805" />
     </state>
-    <state width="1277" height="100" key="GridCell.Tab.0.left/0.25.1440.805@0.25.1440.805" timestamp="1635407484966" />
-    <state width="1277" height="100" key="GridCell.Tab.0.right" timestamp="1635407484967">
+    <state width="1277" height="2" key="GridCell.Tab.0.left/0.25.1440.805@0.25.1440.805" timestamp="1635408630963" />
+    <state width="1277" height="2" key="GridCell.Tab.0.right" timestamp="1635408630964">
       <screen x="0" y="25" width="1440" height="805" />
     </state>
-    <state width="1277" height="100" key="GridCell.Tab.0.right/0.25.1440.805@0.25.1440.805" timestamp="1635407484966" />
+    <state width="1277" height="2" key="GridCell.Tab.0.right/0.25.1440.805@0.25.1440.805" timestamp="1635408630964" />
+    <state x="451" y="182" width="637" height="490" key="find.popup" timestamp="1635408705516">
+      <screen x="0" y="25" width="1440" height="805" />
+    </state>
+    <state x="451" y="182" width="637" height="490" key="find.popup/0.25.1440.805@0.25.1440.805" timestamp="1635408705516" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

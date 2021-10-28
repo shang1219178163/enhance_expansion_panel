@@ -109,6 +109,7 @@ class _EnhanceExpansionPanelDemoState extends State<EnhanceExpansionPanelDemo> {
     );
   }
 
+  ///build EnhanceExpansionPanelList
   Widget buildExpansionPanelList() {
     return SingleChildScrollView(
       child: Container(
@@ -125,12 +126,22 @@ class _EnhanceExpansionPanelDemoState extends State<EnhanceExpansionPanelDemo> {
             return EnhanceExpansionPanel(
               isExpanded: item.isExpanded,
               canTapOnHeader: true,
-              // arrowHide: true,
+              /// custom property
+              /// color
               arrowColor: Colors.blue,
+              /// leading, tailing, none
               arrowPosition: EnhanceExpansionPanelArrowPosition.tailing,
+              /// padding
               arrowPadding: const EdgeInsets.all(5),
-              arrow: const Icon(Icons.keyboard_arrow_right, color: Colors.blue,),
-              arrowExpanded: const Icon(Icons.keyboard_arrow_down, color: Colors.red,),
+              /// custome wiget
+              // arrow: const Icon(Icons.keyboard_arrow_right, color: Colors.blue,),
+              // /// custome wiget by isExpanded
+              // arrowExpanded: const Icon(Icons.keyboard_arrow_down, color: Colors.red,),
+              /// custome wiget
+              arrow: const Icon(Icons.directions_bike, color: Colors.blue,),
+              /// custome wiget by isExpanded
+              arrowExpanded: const Icon(Icons.directions_boat, color: Colors.red,),
+              /// custom property
               headerBuilder: (BuildContext context, bool isExpanded) {
                 return Container(
                   // color: Colors.green,
@@ -143,8 +154,6 @@ class _EnhanceExpansionPanelDemoState extends State<EnhanceExpansionPanelDemo> {
                 );
               },
               body: _buildExpansionPanelBody(item.index),
-              // body: CustomExpansionTile(),
-              // body: _buildListTitle(item),
             );
           }).toList(),
         ),
