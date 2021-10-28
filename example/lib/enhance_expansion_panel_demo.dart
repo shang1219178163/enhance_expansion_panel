@@ -143,6 +143,7 @@ class _EnhanceExpansionPanelDemoState extends State<EnhanceExpansionPanelDemo> {
                 );
               },
               body: _buildExpansionPanelBody(item.index),
+              // body: CustomExpansionTile(),
               // body: _buildListTitle(item),
             );
           }).toList(),
@@ -172,22 +173,6 @@ class _EnhanceExpansionPanelDemoState extends State<EnhanceExpansionPanelDemo> {
           ],
         )).toList(),
       ),
-    );
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: item.items.map((e) => Column(
-        children: [
-          ListTile(
-              title: Text("detail index: $e"),
-              subtitle: Text('To delete this panel, tap the trash can icon'),
-              trailing: Icon(Icons.delete),
-              onTap: () {
-                ddlog("section_${section}_${e}");
-                setState(() {});
-              }),
-          Divider(color: Colors.blue,),
-        ],
-      )).toList(),
     );
   }
 
@@ -265,7 +250,9 @@ class CustomExpansionTileState extends State<CustomExpansionTile> {
       subtitle: Text("subtitle"),
       children: <Widget>[
         Text("Child Widget One"),
+        Divider(),
         Text("Child Widget Two"),
+        Divider(),
         Text("Child Widget Three"),
       ],
       onExpansionChanged: (bool expanding) => setState(() => this.isExpanded = expanding),
