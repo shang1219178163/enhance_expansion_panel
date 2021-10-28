@@ -27,7 +27,7 @@ TODO in English
 
 1.support for default arrow hiding;
 
-2.support for custom arrows;
+2.support for custom arrow;
 
 3.support for arrow leading and tailing location layout
 
