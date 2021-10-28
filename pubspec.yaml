@@ -1,7 +1,9 @@
 name: enhance_expansion_panel
-description: A new Flutter package project.
+description: Based on flutter 2.5.0 native component feature upgrade, support for default arrow hiding, support for custom arrows, support for arrow leading and tailing location layout;
+homepage: https://github.com/shang1219178163
+repository: https://github.com/shang1219178163/enhance_expansion_panel/tree/main
+issue_tracker: https://github.com/shang1219178163/enhance_expansion_panel/issues
 version: 0.0.1
-homepage:
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
