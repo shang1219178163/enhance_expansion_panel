@@ -25,11 +25,11 @@ TODO:
 ***
 TODO in English
 
-1. support for default arrow hiding;
+1.support for default arrow hiding;
 
-2. support for custom arrows;
+2.support for custom arrows;
 
-3. support for arrow leading and tailing location layout
+3.support for arrow leading and tailing location layout
 
 ## Getting started
 
