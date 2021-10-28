@@ -22,11 +22,14 @@ TODO:
 1. 支持默认箭头隐藏;
 2. 支持自定义箭头;
 3. 支持箭头 leading 和 tailing 位置布局；
-
+***
 TODO in English
-4. support for default arrow hiding;
-5. support for custom arrows;
-6. support for arrow leading and tailing location layout
+
+1. support for default arrow hiding;
+
+2. support for custom arrows;
+
+3. support for arrow leading and tailing location layout
 
 ## Getting started
 
