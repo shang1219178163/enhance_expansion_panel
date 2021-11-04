@@ -13,8 +13,9 @@ import 'package:flutter/material.dart';
 class EnhanceExpansionPanelDemo extends StatefulWidget {
 
   final String? title;
+  final bool? appBarHide;
 
-  EnhanceExpansionPanelDemo({ Key? key, this.title}) : super(key: key);
+  const EnhanceExpansionPanelDemo({ Key? key, this.title, this.appBarHide}) : super(key: key);
 
 
   @override
@@ -37,7 +38,7 @@ class _EnhanceExpansionPanelDemoState extends State<EnhanceExpansionPanelDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: widget.appBarHide == true ? null : AppBar(
         title: Text("$widget"),
         actions: [
           IconButton(

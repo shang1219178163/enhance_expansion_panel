@@ -83,7 +83,7 @@ class EnhanceExpansionPanel {
   /// Whether the panel is expanded.
   ///
   /// Defaults to false.
-  final bool isExpanded;
+  late bool isExpanded;
 
   /// Whether tapping on the panel's header will expand/collapse it.
   ///
