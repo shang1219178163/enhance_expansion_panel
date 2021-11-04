@@ -134,13 +134,13 @@ class _EnhanceExpansionPanelDemoState extends State<EnhanceExpansionPanelDemo> {
               /// padding
               arrowPadding: const EdgeInsets.all(5),
               /// custome wiget
-              // arrow: const Icon(Icons.keyboard_arrow_right, color: Colors.blue,),
-              // /// custome wiget by isExpanded
-              // arrowExpanded: const Icon(Icons.keyboard_arrow_down, color: Colors.red,),
-              /// custome wiget
-              arrow: const Icon(Icons.directions_bike, color: Colors.blue,),
+              arrow: const Icon(Icons.keyboard_arrow_right, color: Colors.blue,),
               /// custome wiget by isExpanded
-              arrowExpanded: const Icon(Icons.directions_boat, color: Colors.red,),
+              arrowExpanded: const Icon(Icons.keyboard_arrow_down, color: Colors.red,),
+              /// custome wiget
+              // arrow: const Icon(Icons.directions_bike, color: Colors.blue,),
+              // /// custome wiget by isExpanded
+              // arrowExpanded: const Icon(Icons.directions_boat, color: Colors.red,),
               /// custom property
               headerBuilder: (BuildContext context, bool isExpanded) {
                 return Container(
@@ -165,20 +165,22 @@ class _EnhanceExpansionPanelDemoState extends State<EnhanceExpansionPanelDemo> {
     final item = _data[section];
 
     return Container(
-      color: Colors.lightBlue,
+      // color: Colors.lightBlue,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: item.items.map((e) => Column(
           children: [
+            // if (item.items.first == e) Divider(color: Colors.blue,),
             ListTile(
-                title: Text("detail index: $e"),
-                subtitle: Text('To delete this panel, tap the trash can icon'),
-                trailing: Icon(Icons.delete),
-                onTap: () {
-                  ddlog("section_${section}_${e}");
-                  setState(() {});
-                }),
-            Divider(color: Colors.blue,),
+              dense: true,
+              title: Text("detail index: $e"),
+              subtitle: Text('To delete this panel, tap the trash can icon'),
+              trailing: Icon(Icons.delete),
+              onTap: () {
+                ddlog("section_${section}_${e}");
+                setState(() {});
+              }),
+            if (item.items.last != e) Divider(color: Colors.blue,),
           ],
         )).toList(),
       ),
