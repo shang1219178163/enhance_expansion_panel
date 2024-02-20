@@ -117,11 +117,11 @@ class _EnhanceExpansionPanelDemoState extends State<EnhanceExpansionPanelDemo> {
         child: EnhanceExpansionPanelList(
           dividerColor: Colors.red,
           // elevation: 4,
+          materialGapSize: 0,
           expandedHeaderPadding: EdgeInsets.only(top: 0, bottom: 0),
           expansionCallback: (int index, bool isExpanded) {
-            setState(() {
-              _data[index].isExpanded = !isExpanded;
-            });
+            _data[index].isExpanded = !isExpanded;
+            setState(() {});
           },
           children: _data.map<EnhanceExpansionPanel>((item) {
             return EnhanceExpansionPanel(

@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a151d7-6d0f-425a-b028-90b9def310a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/enhance_expansion_tile.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/enhance_expansion_panel_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/enhance_expansion_panel_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/enhance_expansion_panel_demo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/enhance_expansion_panel_demo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/enhance_expansion_panel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/enhance_expansion_panel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/enhance_expand_list_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/enhance_expand_list_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/enhance_expansion_panel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/enhance_expansion_panel.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,10 +45,14 @@
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
     "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "/Users/shang/GitHub/enhance_expansion_panel/lib/src",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib/src" />
     </key>

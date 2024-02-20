@@ -34,11 +34,11 @@ class _EnhanceExpandListViewState<E> extends State<EnhanceExpandListView<E>> {
           child: EnhanceExpansionPanelList(
             // dividerColor: Colors.red,
             // elevation: 4,
+            materialGapSize: 0,
             expandedHeaderPadding: EdgeInsets.only(top: 0, bottom: 0),
             expansionCallback: (int index, bool isExpanded) {
-              setState(() {
-                widget.children[index].isExpanded = !isExpanded;
-              });
+              widget.children[index].isExpanded = !isExpanded;
+              setState(() {});
             },
             children: widget.children.map((e) {
               return EnhanceExpansionPanel(

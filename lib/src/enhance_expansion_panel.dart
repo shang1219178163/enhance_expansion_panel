@@ -14,8 +14,10 @@ const EdgeInsets _kPanelHeaderExpandedDefaultPadding = EdgeInsets.symmetric(
   vertical: 64.0 - _kPanelHeaderCollapsedHeight,
 );
 
-class _SaltedEnhanceKey<S, V> extends LocalKey {
-  const _SaltedEnhanceKey(this.salt, this.value);
+const EdgeInsets _kExpandIconPadding = EdgeInsets.all(12.0);
+
+class _SaltedKey<S, V> extends LocalKey {
+  const _SaltedKey(this.salt, this.value);
 
   final S salt;
   final V value;
@@ -24,7 +26,7 @@ class _SaltedEnhanceKey<S, V> extends LocalKey {
   bool operator ==(Object other) {
     if (other.runtimeType != runtimeType)
       return false;
-    return other is _SaltedEnhanceKey<S, V>
+    return other is _SaltedKey<S, V>
         && other.salt == salt
         && other.value == value;
   }
@@ -237,9 +239,8 @@ class EnhanceExpansionPanelList extends StatefulWidget {
     this.expandedHeaderPadding = _kPanelHeaderExpandedDefaultPadding,
     this.dividerColor,
     this.elevation = 2,
-  }) : assert(children != null),
-        assert(animationDuration != null),
-        _allowOnlyOnePanelOpen = false,
+    this.materialGapSize = 16.0,
+  }) : _allowOnlyOnePanelOpen = false,
         initialOpenPanelValue = null,
         super(key: key);
 
@@ -328,6 +329,7 @@ class EnhanceExpansionPanelList extends StatefulWidget {
     this.expandedHeaderPadding = _kPanelHeaderExpandedDefaultPadding,
     this.dividerColor,
     this.elevation = 2,
+    this.materialGapSize = 16,
   }) : assert(children != null),
         assert(animationDuration != null),
         _allowOnlyOnePanelOpen = true,
@@ -382,6 +384,12 @@ class EnhanceExpansionPanelList extends StatefulWidget {
   ///
   /// By default, the value of elevation is 2.
   final double elevation;
+
+  /// Defines the [MaterialGap.size] of the [MaterialGap] which is placed
+  /// between the [ExpansionPanelList.children] when they're expanded.
+  ///
+  /// Defaults to `16.0`.
+  final double materialGapSize;
 
   @override
   State<StatefulWidget> createState() => _EnhanceExpansionPanelListState();
@@ -447,8 +455,9 @@ class _EnhanceExpansionPanelListState extends State<EnhanceExpansionPanelList> {
         final EnhanceExpansionPanelRadio child = widget.children[childIndex] as EnhanceExpansionPanelRadio;
         if (widget.expansionCallback != null &&
             childIndex != index &&
-            child.value == _currentOpenPanel?.value)
+            child.value == _currentOpenPanel?.value) {
           widget.expansionCallback!(childIndex, false);
+        }
       }
 
       setState(() {
@@ -459,8 +468,9 @@ class _EnhanceExpansionPanelListState extends State<EnhanceExpansionPanelList> {
 
   EnhanceExpansionPanelRadio? searchPanelByValue(List<EnhanceExpansionPanelRadio> panels, Object? value)  {
     for (final EnhanceExpansionPanelRadio panel in panels) {
-      if (panel.value == value)
+      if (panel.value == value) {
         return panel;
+      }
     }
     return null;
   }
@@ -475,8 +485,9 @@ class _EnhanceExpansionPanelListState extends State<EnhanceExpansionPanelList> {
     final List<MergeableMaterialItem> items = <MergeableMaterialItem>[];
 
     for (int index = 0; index < widget.children.length; index += 1) {
-      if (_isChildExpanded(index) && index != 0 && !_isChildExpanded(index - 1))
-        items.add(MaterialGap(key: _SaltedEnhanceKey<BuildContext, int>(context, index * 2 - 1)));
+      if (_isChildExpanded(index) && index != 0 && !_isChildExpanded(index - 1)) {
+        items.add(MaterialGap(key: _SaltedKey<BuildContext, int>(context, index * 2 - 1), size: widget.materialGapSize));
+      }
 
       final EnhanceExpansionPanel child = widget.children[index];
       final Widget headerWidget = child.headerBuilder(
@@ -491,7 +502,7 @@ class _EnhanceExpansionPanelListState extends State<EnhanceExpansionPanelList> {
           arrowExpanded: child.arrowExpanded,
           color: child.arrowColor,
           isExpanded: _isChildExpanded(index),
-          padding: child.arrowPadding ?? const EdgeInsets.all(16.0),
+          padding: child.arrowPadding ?? _kExpandIconPadding,
           onPressed: !child.canTapOnHeader
               ? (bool isExpanded) => _handlePressed(isExpanded, index)
               : null,
@@ -532,7 +543,7 @@ class _EnhanceExpansionPanelListState extends State<EnhanceExpansionPanelList> {
       }
       items.add(
         MaterialSlice(
-          key: _SaltedEnhanceKey<BuildContext, int>(context, index * 2),
+          key: _SaltedKey<BuildContext, int>(context, index * 2),
           color: child.backgroundColor,
           child: Column(
             children: <Widget>[
@@ -551,8 +562,9 @@ class _EnhanceExpansionPanelListState extends State<EnhanceExpansionPanelList> {
         ),
       );
 
-      if (_isChildExpanded(index) && index != widget.children.length - 1)
-        items.add(MaterialGap(key: _SaltedEnhanceKey<BuildContext, int>(context, index * 2 + 1)));
+      if (_isChildExpanded(index) && index != widget.children.length - 1) {
+        items.add(MaterialGap(key: _SaltedKey<BuildContext, int>(context, index * 2 + 1), size: widget.materialGapSize));
+      }
     }
 
     return MergeableMaterial(
