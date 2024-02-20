@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/enhance_expansion_panel.iml" filepath="$PROJECT_DIR$/.idea/enhance_expansion_panel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/enhance_expansion_panel_android.iml" filepath="$PROJECT_DIR$/android/enhance_expansion_panel_android.iml" />
     </modules>
   </component>
 </project>
