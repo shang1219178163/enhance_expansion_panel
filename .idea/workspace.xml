@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a151d7-6d0f-425a-b028-90b9def310a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/src/enhance_expansion_tile.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/enhance_expansion_panel_demo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/enhance_expansion_panel_demo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/enhance_expansion_panel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/enhance_expansion_panel.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/enhance_expand_list_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/enhance_expand_list_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/enhance_expansion_panel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/enhance_expansion_panel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
