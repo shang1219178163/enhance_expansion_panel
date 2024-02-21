@@ -13,9 +13,9 @@ import 'enhance_expansion_panel.dart';
 /// custom: Expand List view
 class EnhanceExpandListView<E> extends StatefulWidget {
 
-  List<ExpandPanelModel<E>> children;
+  final List<ExpandPanelModel<E>> children;
 
-  EnhanceExpandListView({
+  const EnhanceExpandListView({
     Key? key,
     required this.children,
   }) : super(key: key);
@@ -30,41 +30,39 @@ class _EnhanceExpandListViewState<E> extends State<EnhanceExpandListView<E>> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
-        child: Container(
-          child: EnhanceExpansionPanelList(
-            // dividerColor: Colors.red,
-            // elevation: 4,
-            expandedHeaderPadding: EdgeInsets.only(top: 0, bottom: 0),
-            expansionCallback: (int index, bool isExpanded) {
-              setState(() {
-                widget.children[index].isExpanded = !isExpanded;
-              });
-            },
-            children: widget.children.map((e) {
-              return EnhanceExpansionPanel(
-                isExpanded: e.isExpanded,
-                canTapOnHeader: true,
-                backgroundColor: e.backgroundColor,
-                arrowColor: e.arrowColor,
-                arrowPadding: e.arrowPadding,
-                arrowPosition: e.arrowPosition,
-                arrowExpanded: e.arrowExpanded,
-                headerBuilder: (BuildContext context, bool isExpanded) {
-                  return e.headerBuilder(context, isExpanded);
-                },
-                body: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: e.bodyChildren.map((item) => Column(
-                    children: [
-                      // if (e.bodyChildren.first == item) Divider(),
-                      e.bodyItemBuilder(context, item),
-                      if (e.bodyChildren.last != item) Divider(),
-                    ],
-                  )).toList(),
-                ),
-              );
-            }).toList(),
-          ),
+        child: EnhanceExpansionPanelList(
+          // dividerColor: Colors.red,
+          // elevation: 4,
+          expandedHeaderPadding: const EdgeInsets.only(top: 0, bottom: 0),
+          expansionCallback: (int index, bool isExpanded) {
+            setState(() {
+              widget.children[index].isExpanded = !isExpanded;
+            });
+          },
+          children: widget.children.map((e) {
+            return EnhanceExpansionPanel(
+              isExpanded: e.isExpanded,
+              canTapOnHeader: true,
+              backgroundColor: e.backgroundColor,
+              arrowColor: e.arrowColor,
+              arrowPadding: e.arrowPadding,
+              arrowPosition: e.arrowPosition,
+              arrowExpanded: e.arrowExpanded,
+              headerBuilder: (BuildContext context, bool isExpanded) {
+                return e.headerBuilder(context, isExpanded);
+              },
+              body: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: e.bodyChildren.map((item) => Column(
+                  children: [
+                    // if (e.bodyChildren.first == item) Divider(),
+                    e.bodyItemBuilder(context, item),
+                    if (e.bodyChildren.last != item) const Divider(),
+                  ],
+                )).toList(),
+              ),
+            );
+          }).toList(),
         ),
       ),
     );
