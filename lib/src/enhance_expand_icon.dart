@@ -42,10 +42,7 @@ class EnhanceExpandIcon extends StatefulWidget {
     this.expandedColor,
     this.arrow,
     this.arrowExpanded,
-  }) : assert(isExpanded != null),
-       assert(size != null),
-       assert(padding != null),
-       super(key: key);
+  }) : super(key: key);
 
   /// Whether the icon is in an expanded state.
   ///

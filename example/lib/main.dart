@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Flutter Demo',
       // theme: ThemeData(
       //
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       //    // cardColor: Colors.red,
       //    iconTheme: const IconThemeData(color: Colors.red),
       //  ),
-      home: const MyHomePage(title: 'Home Page'),
+      home: MyHomePage(title: 'Home Page'),
         // home: EnhanceExpansionPanelDemo(title: 'EnhanceExpansionPanelDemo'),
 
     );
@@ -41,13 +41,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
           }, child: const Text("fold list", style: TextStyle(color: Colors.white),)),
         ],
       ),
-      body: EnhanceExpansionPanelDemo(title: 'EnhanceExpansionPanelDemo', appBarHide: true,),
+      body: const EnhanceExpansionPanelDemo(title: 'EnhanceExpansionPanelDemo', appBarHide: true,),
       // floatingActionButton: FloatingActionButton(
       //   onPressed: _incrementCounter,
       //   tooltip: 'Increment',

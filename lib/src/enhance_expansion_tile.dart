@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 const Duration _kExpand = Duration(milliseconds: 200);
 
 /// EnhanceExpansionTile 部分子组件构建类型
-typedef ExpansionWidgetBuilder = Widget Function(VoidCallback onTap);
+typedef ExpansionWidgetBuilder = Widget Function(VoidCallback onToggle);
 
 /// A single-line [ListTile] with an expansion arrow icon that expands or collapses
 /// the tile to reveal or hide the [children].

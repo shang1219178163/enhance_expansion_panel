@@ -24,15 +24,16 @@ class _SaltedKey<S, V> extends LocalKey {
 
   @override
   bool operator ==(Object other) {
-    if (other.runtimeType != runtimeType)
+    if (other.runtimeType != runtimeType) {
       return false;
+    }
     return other is _SaltedKey<S, V>
         && other.salt == salt
         && other.value == value;
   }
 
   @override
-  int get hashCode => hashValues(runtimeType, salt, value);
+  int get hashCode => Object.hash(runtimeType, salt, value);
 
   @override
   String toString() {
@@ -69,10 +70,7 @@ class EnhanceExpansionPanel {
     this.arrowPosition = EnhanceExpansionPanelArrowPosition.tailing,
     this.arrowExpanded,
     this.arrow,
-  }) : assert(headerBuilder != null),
-        assert(body != null),
-        assert(isExpanded != null),
-        assert(canTapOnHeader != null);
+  });
 
   /// The widget builder that builds the expansion panels' header.
   final ExpansionPanelHeaderBuilder headerBuilder;
@@ -130,8 +128,7 @@ class EnhanceExpansionPanelRadio extends EnhanceExpansionPanel {
     required Widget body,
     bool canTapOnHeader = false,
     Color? backgroundColor,
-  }) : assert(value != null),
-        super(
+  }) : super(
         body: body,
         headerBuilder: headerBuilder,
         canTapOnHeader: canTapOnHeader,
@@ -330,9 +327,7 @@ class EnhanceExpansionPanelList extends StatefulWidget {
     this.dividerColor,
     this.elevation = 2,
     this.materialGapSize = 16,
-  }) : assert(children != null),
-        assert(animationDuration != null),
-        _allowOnlyOnePanelOpen = true,
+  }) : _allowOnlyOnePanelOpen = true,
         super(key: key);
 
   /// The children of the expansion panel list. They are laid out in a similar
@@ -495,7 +490,7 @@ class _EnhanceExpansionPanelListState extends State<EnhanceExpansionPanelList> {
         _isChildExpanded(index),
       );
 
-      Widget expandIconContainer = child.arrow == EnhanceExpansionPanelArrowPosition.none ? Container() : Container(
+      Widget expandIconContainer = child.arrowPosition == EnhanceExpansionPanelArrowPosition.none ? Container() : Container(
         margin: const EdgeInsetsDirectional.only(end: 8.0),
         child: EnhanceExpandIcon(
           arrow: child.arrow,
@@ -518,7 +513,7 @@ class _EnhanceExpansionPanelListState extends State<EnhanceExpansionPanelList> {
       }
       Widget header = Row(
         children: <Widget>[
-          if (child.arrow != EnhanceExpansionPanelArrowPosition.none && child.arrowPosition == EnhanceExpansionPanelArrowPosition.leading) expandIconContainer,
+          if (child.arrowPosition != EnhanceExpansionPanelArrowPosition.none && child.arrowPosition == EnhanceExpansionPanelArrowPosition.leading) expandIconContainer,
           Expanded(
             child: AnimatedContainer(
               duration: widget.animationDuration,
@@ -530,7 +525,7 @@ class _EnhanceExpansionPanelListState extends State<EnhanceExpansionPanelList> {
               ),
             ),
           ),
-          if (child.arrow != EnhanceExpansionPanelArrowPosition.none && child.arrowPosition == EnhanceExpansionPanelArrowPosition.tailing) expandIconContainer,
+          if (child.arrowPosition != EnhanceExpansionPanelArrowPosition.none && child.arrowPosition == EnhanceExpansionPanelArrowPosition.tailing) expandIconContainer,
         ],
       );
       if (child.canTapOnHeader) {
